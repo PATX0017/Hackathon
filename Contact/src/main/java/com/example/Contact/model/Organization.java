@@ -1,16 +1,22 @@
 package com.example.Contact.model;
 
+import java.time.LocalDateTime;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 
 @Entity
-public class Organization extends ContactClass {
+public class Organization extends Contact {
 	
 	@Column(name="website")
 	protected String website;
 	
-	public Organization(String name, String phoneNumber, String website) {
-		super(name, phoneNumber);
+	public Organization() {
+		
+	}
+	
+	public Organization(String name, String phone_number, LocalDateTime created_at, String website) {
+		super(name, phone_number, created_at);
 		this.website = website;
 	}
 
@@ -21,5 +27,5 @@ public class Organization extends ContactClass {
 	public void setWebsite(String website) {
 		this.website = website;
 	}
-	
+
 }
